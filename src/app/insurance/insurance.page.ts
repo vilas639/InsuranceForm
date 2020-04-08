@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-insurance',
@@ -10,7 +12,23 @@ export class InsurancePage implements OnInit {
 
   form: FormGroup;
 
-  constructor() { }
+  private myTemplate: any = '';
+  myExternalPageLink ="D:/imps_stuff/insurance/SuryodayAuthorizationHTML/SuryodayAuthorizationHTML/index.html";
+  @Input() url: string;
+
+  // constructor(http: HttpClient) {
+  //   http.get('D:/imps_stuff/insurance/SuryodayAuthorizationHTML/SuryodayAuthorizationHTML/index.html',
+  //    {responseType: 'text'}).subscribe(data => this.myTemplate = data);
+
+
+     
+  //  }
+
+   constructor()
+   {
+     
+   }
+
 
   ngOnInit() {
 
@@ -23,25 +41,25 @@ export class InsurancePage implements OnInit {
         updateOn: 'blur',
         validators: [Validators.required, Validators.maxLength(180)]
       }),
-      price: new FormControl(null, {
-        updateOn: 'blur',
-        validators: [Validators.required, Validators.min(1)]
-      }),
-      dateFrom: new FormControl(null, {
-        updateOn: 'blur',
-        validators: [Validators.required]
-      }),
-      dateTo: new FormControl(null, {
-        updateOn: 'blur',
-        validators: [Validators.required]
-      })
+      // price: new FormControl(null, {
+      //   updateOn: 'blur',
+      //   validators: [Validators.required, Validators.min(1)]
+      // }),
+      // dateFrom: new FormControl(null, {
+      //   updateOn: 'blur',
+      //   validators: [Validators.required]
+      // }),
+      // dateTo: new FormControl(null, {
+      //   updateOn: 'blur',
+      //   validators: [Validators.required]
+      // })
     });
   }
 
 
   onCreateOffer() {
     console.log(this.form.value);
-    
+
   }
 
  
