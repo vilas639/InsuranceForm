@@ -1,0 +1,7 @@
+{
+  "name": "GenaralInsurance",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
